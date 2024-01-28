@@ -39,7 +39,8 @@ class Server:
         Sindx, Eindx = self.index_range(page, page_size)
         return self.dataset()[Sindx:Eindx]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
+    def get_hyper(self, page: int,
+                  page_size: int) -> Dict[str, Union[int, List[List], None]]:
         """
         1-simple_pagination
         """
