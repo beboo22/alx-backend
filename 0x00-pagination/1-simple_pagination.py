@@ -36,5 +36,5 @@ class Server:
         """
         assert type(page) == int and type(page_size) == int
         assert page > 0 and page_size > 0
-        Sindx, Eindx = self.index_range(page, page_size)
-        return self.dataset()[Sindx:Eindx]
+        startIndex, endIndex = self.index_range(page, page_size)
+        return self.dataset()[startIndex:endIndex]
