@@ -1,6 +1,6 @@
 import csv
 import math
-from typing import List, Tuple, Dict, None
+from typing import List, Tuple, Dict, Union
 
 
 class Server:
@@ -40,7 +40,7 @@ class Server:
         return self.dataset()[Sindx:Eindx]
 
     def get_hyper(self, page: int,
-                  page_size: int) -> Dict[List[str, None]]:
+                  page_size: int) -> Dict[str, Union[int, List[List], None]]:
         """
         1-simple_pagination
         """
