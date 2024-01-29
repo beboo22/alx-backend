@@ -40,7 +40,7 @@ class Server:
         return self.dataset()[Sindx:Eindx]
 
     def get_hyper(self, page: int,
-                  page_size: int) -> Dict[str, Union[int, List[List], None]]:
+                  page_size: int) -> Dict[List[str, None]]:
         """
         1-simple_pagination
         """
