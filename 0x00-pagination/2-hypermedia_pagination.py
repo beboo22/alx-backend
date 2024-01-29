@@ -1,6 +1,9 @@
+#!/usr/bin/env python3
+"""
+Adds `get_hyper` method to `Server` class
+"""
 import csv
-import math
-from typing import List, Tuple, Dict, Union
+from typing import Dict, List, Tuple, Union
 
 
 class Server:
@@ -24,20 +27,25 @@ class Server:
 
     @staticmethod
     def index_range(page: int, page_size: int) -> Tuple[int, int]:
+        """Calculate start and end index range for a `page`, with `page_size`
         """
-        0-simple_helper_function
-        """
-        nPage = page * page_size
-        return nPage - page_size, nPage
+        nextPageStartIndex = page * page_size
+        return nextPageStartIndex - page_size, nextPageStartIndex
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        1-simple_pagination
+        Get items for the given page number
+        Args:
+            page (int): page number
+            page_size (int): number of items per page
+        Returns:
+            (List[List]): a list of list(row) if inputs are within range
+            ([]) : an empty list if page and page_size are out of range
         """
         assert type(page) == int and type(page_size) == int
         assert page > 0 and page_size > 0
-        Sindx, Eindx = self.index_range(page, page_size)
-        return self.dataset()[Sindx:Eindx]
+        startIndex, endIndex = self.index_range(page, page_size)
+        return self.dataset()[startIndex:endIndex]
 
     def get_hyper(self, page: int,
                   page_size: int) -> Dict[str, Union[int, List[List], None]]:
