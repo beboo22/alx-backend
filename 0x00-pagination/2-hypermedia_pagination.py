@@ -1,6 +1,6 @@
 import csv
 import math
-from typing import List, Tuple, Dict
+from typing import List, Tuple, Dict, None
 
 
 class Server:
