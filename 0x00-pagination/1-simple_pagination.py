@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+"""
+Adds `get_page` method to `Server` class
+"""
 import csv
-import math
 from typing import List, Tuple
 
 
