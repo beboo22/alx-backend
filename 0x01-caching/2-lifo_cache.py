@@ -12,8 +12,7 @@ class LIFOCache(BaseCaching):
         super().__init__()
         self.cache_data = OrderedDict()
         self.order_of_arrival = deque()
-    
-    
+
     def put(self, key, item):
         """Adds an item in the cache.
         """
@@ -25,7 +24,7 @@ class LIFOCache(BaseCaching):
                 print("DISCARD:", last_key)
         self.cache_data[key] = item
         self.cache_data.move_to_end(key, last=True)
-    
+
     def get(self, key):
         '''return the value in `self.cache_data` linked to `key`
         '''
