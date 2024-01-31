@@ -6,13 +6,17 @@ BaseCaching = __import__('BaseCaching').BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    """ FIFOCache class
-    """
+    '''A class `FIFOCache` that inherits from
+       `BaseCaching` and is a caching system.
+    '''
     def __init__(self):
         self.order_of_arrival = deque()
         super().__init__()
 
     def put(self, key, item):
+        '''assign to the dictionary `self.cache_data` the
+           `item` value for the key `key`
+        '''
         if key not in self.cache_data:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
                 if key is None or item is None:
@@ -28,6 +32,8 @@ class FIFOCache(BaseCaching):
                 pass
 
     def get(self, key):
+        '''return the value in `self.cache_data` linked to `key`
+        '''
         if key in self.cache_data:
             return self.cache_data[key]
         else:
