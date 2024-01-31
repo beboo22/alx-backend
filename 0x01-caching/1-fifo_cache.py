@@ -2,12 +2,12 @@
 """ FIFOCache class
 """
 from collections import deque
-BaseCaching = __import__('BaseCaching').BaseCaching
+from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
     '''A class `FIFOCache` that inherits from
-       `BaseCaching` and is a caching system.
+       `BaseCaching` .
     '''
     def __init__(self):
         super().__init__()
