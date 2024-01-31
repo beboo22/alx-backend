@@ -10,8 +10,8 @@ class FIFOCache(BaseCaching):
        `BaseCaching` and is a caching system.
     '''
     def __init__(self):
-        self.order_of_arrival = deque()
         super().__init__()
+        self.order_of_arrival = deque()
 
     def put(self, key, item):
         '''assign to the dictionary `self.cache_data` the
