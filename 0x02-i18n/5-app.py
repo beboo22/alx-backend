@@ -31,11 +31,15 @@ def get_user():
     if login_id:
         return users.get(int(login_id))
     return None
+
+
 @app.before_request
 def before_request():
     """Retrieves a user based on a user id.
     """
     g.user = get_user()
+
+
 @babel.localeselector
 def get_locale():
     """get Configuration variable"""
