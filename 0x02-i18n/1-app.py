@@ -15,7 +15,10 @@ class Config:
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
 bable = Babel(app)
+
+
 @app.route('/')
 def index():
     """
