@@ -24,17 +24,18 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
-def get_user(id):
+def get_user():
+    """Retrieves a user based on a user id.
     """
-    Validate user login details
-    Args:
-        id (str): user id
-    Returns:
-        (Dict): user dictionary if id is valid else None
+    login_id = request.args.get('login_as')
+    if login_id:
+        return users.get(int(login_id))
+    return None
+@app.before_request
+def before_request():
+    """Retrieves a user based on a user id.
     """
-    return users.get(int(id), 0)
-
-
+    g.user = get_user()
 @babel.localeselector
 def get_locale():
     """get Configuration variable"""
