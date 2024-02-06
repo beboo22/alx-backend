@@ -3,7 +3,7 @@
 0. Basic Flask app
 """
 from flask import Flask, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, _
 
 
 class Config:
@@ -29,7 +29,7 @@ def index():
     """
     0. Basic Flask app
     """
-    return render_template('1-index.html')
+    return render_template('3-index.html')
 
 
 if __name__ == '__main__':
