@@ -1,30 +1,29 @@
 #!/usr/bin/env python3
-"""
-0. Basic Flask app
-"""
+"""flask"""
 from flask import Flask, render_template
 from flask_babel import Babel
 
 
-class Config:
-    """Configuration class"""
-    LANGUAGES = ["en", "fr"]
-    Babel_default_locale = "en"
-    Babel_default_timezone = "UTC"
-
-
 app = Flask(__name__)
+
+
+class Config():
+    """Config class"""
+    LANGUAGES = ["en", "fr"]
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
+
+
 app.config.from_object(Config)
 babel = Babel(app)
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    """
-    0. Basic Flask app
-    """
-    return render_template('1-index.html')
+    """index html"""
+    return render_template("1-index.html")
 
 
 if __name__ == '__main__':
+    """main"""
     app.run(debug=True)
